@@ -1,0 +1,20 @@
+@import '../variables.scss';
+
+
+.success-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid $gray-color;
+    background: $white-second-color;
+    border: 2px solid $black-color;
+    box-shadow: 4px 4px $black-color;
+    margin: 70px 0;
+
+
+    & .success-text {
+        font-size: 37px;
+        margin: 200px 0;
+        color: $marvel-color;
+    }
+}
