@@ -1,0 +1,74 @@
+@use "sass:math";
+
+@import '../variables.scss';
+
+
+@keyframes noise-anim {
+    $steps: 20;
+
+    @for $i from 0 through $steps {
+        #{percentage($i * math.div(1, $steps))} {
+            clip: rect(random(100) + px, 9999px, random(100) + px, 0);
+        }
+    }
+}
+
+
+@keyframes noise-anim-2 {
+    $steps: 20;
+
+    @for $i from 0 through $steps {
+        #{percentage($i * math.div(1, $steps))} {
+            clip: rect(random(100) + px, 9999px, random(100) + px, 0);
+        }
+    }
+}
+
+.error-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; 
+    transform-style: preserve-3d;
+    perspective: 600px;
+}
+
+.glitch {
+    color: $black-color;
+    font-size: 100px;
+    position: relative;
+    width: 400px;
+    margin: 0 auto;
+    transform: rotateY(-50deg);
+}
+
+
+
+.glitch:after {
+    content: "ERROR";
+    position: absolute;
+    left: 2px;
+    text-shadow: -1px 0 $yellow-second-color;
+    top: 10px;
+    color: $black-color;
+    background: $white-color;
+    overflow: hidden;
+    clip: rect(0, 900px, 0, 0);
+    animation: noise-anim 2s infinite linear alternate-reverse;
+}
+
+
+
+.glitch:before {
+    content: "\00a0\00a0\00a0 404 \00a0\00a0\00a0";
+    position: absolute;
+    left: -2px;
+    text-shadow: 1px 0 $marvel-color;
+    top: 0;
+    color: $white-color;
+    background: $black-color;
+    overflow: hidden;
+    clip: rect(0, 900px, 0, 0);
+    animation: noise-anim-2 3s infinite linear alternate-reverse;
+    transform: rotateY(50deg);
+}

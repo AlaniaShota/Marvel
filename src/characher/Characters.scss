@@ -1,0 +1,65 @@
+@import '../variables.scss';
+
+.characters {
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 12px;
+  width: 100%;
+
+}
+
+.characterCard {
+  border: 2px solid $gray-color;
+  background: $white-second-color;
+  padding: 370px 6px 6px 6px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid $black-color;
+  box-shadow: 4px 4px $black-color;
+  filter: grayscale(100);
+
+  transition: $transition-timing-function all $transition-duration;
+
+  .caption {
+
+    font-size: 18px;
+    text-align: center;
+    margin: auto auto 0 auto;
+    padding: 8px 16px;
+
+    background-color: $white-color;
+
+    border: 1px solid $black-color;
+    box-shadow: 2px 2px $black-color;
+
+    &.bottom {
+      position: absolute;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    filter: grayscale(0);
+    box-shadow: 6px 6px $black-color;
+    transform: translate($transform-offset, $transform-offset);
+
+    .caption {
+      opacity: 0;
+    }
+
+    .bottom {
+      opacity: 1;
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .characters {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

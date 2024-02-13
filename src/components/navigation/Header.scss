@@ -1,0 +1,62 @@
+@import '../../variables.scss';
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px auto;
+    height: auto;
+    width: 90%;
+
+    .header-navigation-link {
+        background-color: $marvel-color;
+        color: $white-color;
+        // font-weight: 500;
+        font-size: 28px;
+        height: 100%;
+        text-align: center;
+        transition: linear all 1s;
+        border: 1px solid $black-color;
+        box-shadow: 2px 2px $black-color;
+        padding: 1px 15px;
+
+        &:hover {
+            backdrop-filter: none;
+            transform: translate($transform-offset, $transform-offset);
+            box-shadow: 4px 4px $black-color;
+            background: $white-color;
+            color: $marvel-color;
+        }
+    }
+
+    .header-content {
+        display: flex;
+        justify-content: end;
+        flex-direction: row;
+        align-items: center;
+        gap: 1px;
+
+
+        .header-navigation-icon {
+            width: 5%;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            transition: 1.2s all ease;
+            margin: 0 10px;
+
+            &:hover {
+                backdrop-filter: none;
+                color: $white-color;
+                transform: translate($transform-offset, $transform-offset);
+                box-shadow: 4px 4px $black-color;
+            }
+
+            & .header-navigation-img {
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}

@@ -1,0 +1,88 @@
+@import '../variables.scss';
+
+.order-content {
+    margin: 20px auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    border: 2px solid $gray-color;
+    background: $white-second-color;
+    border: 2px solid $black-color;
+    box-shadow: 4px 4px $black-color;
+
+    & .order-content-wishlist {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        & .order-wishlist-card {
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+
+            align-items: center;
+            gap: 20px;
+            padding-left: 5px;
+            margin: 10px;
+            height: 100%;
+
+
+            & .comicImg {
+                border: 2px solid $black-color;
+                box-shadow: 4px 4px $black-color;
+                object-fit: contain;
+            }
+
+            & .comicDetails {
+                display: flex;
+                flex-direction: column;
+                justify-content: end;
+                // align-items: center;
+                flex-wrap: wrap;
+                width: 35%;
+                height: 95%;
+                gap: 1%;
+                // padding: 50px 0;
+
+                & .quantity-content {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+
+                }
+
+                & h1,
+                & p {
+                    font-size: 21px;
+
+                }
+
+                & p {
+                    margin: 20px 0;
+                }
+            }
+        }
+    }
+}
+
+.buy-button {
+    display: flex;
+    align-items: center;
+    gap: 5%;
+    margin: 20px 10px;
+
+    & .warning-message {
+        text-align: center;
+        padding: 0px 0px 470px 50px;
+        font-size: 27px;
+    }
+}
+
+.order-wishlist-card {
+    width: 100%;
+}
+
+.comicImg {
+    width: 25%;
+}

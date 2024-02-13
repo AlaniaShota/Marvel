@@ -1,0 +1,14 @@
+@import '../../variables.scss';
+
+.form-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 150px;
+
+    & .error-msg {
+        color: $marvel-color;
+        margin: 5px 0;
+    }
+}

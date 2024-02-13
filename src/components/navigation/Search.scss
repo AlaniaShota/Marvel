@@ -1,0 +1,29 @@
+@import '../../variables.scss';
+
+.search {
+  display: flex;
+  justify-content: end;
+  flex-direction: row;
+  align-items: center;
+  max-width: 100%;
+  gap: 1%;
+}
+
+input {
+  width: auto;
+  font-size: 18px;
+  text-align: center;
+  padding: 8px 0;
+}
+
+.footerText {
+  margin: auto 18px;
+  font-size: 18px;
+  text-align: end;
+  color: $white-color;
+
+  & .footerMarvel {
+    color: $marvel-color;
+    font-size: 21px;
+  }
+}

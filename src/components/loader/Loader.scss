@@ -1,0 +1,85 @@
+@import '../../variables.scss';
+
+.loader-content {
+    height: 100vh;
+
+    & .loader {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate($transform-loader-offset, $transform-loader-offset);
+        width: 150px;
+        height: 150px;
+        background: transparent;
+        border: 3px solid $black-color;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 150px;
+        // font-family: sans-serif;
+        font-size: 20px;
+        color: $yellow-second-color;
+        letter-spacing: 4px;
+        text-shadow: 0 0 10px $yellow-second-color;
+        box-shadow: 0 0 20px $gray-color;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid transparent;
+            border-top: 3px solid $yellow-second-color;
+            border-right: 3px solid $yellow-second-color;
+            border-radius: 50%;
+            animation: animateCircle $animation-transition;
+        }
+
+        .loader-animation {
+            display: block;
+            position: absolute;
+            top: calc(50% - 2px);
+            left: 50%;
+            width: 50%;
+            height: 4px;
+            background: transparent;
+            transform-origin: left;
+            animation: animate 2s linear infinite;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: -6px;
+                right: -8px;
+                border-radius: 50%;
+                width: 16px;
+                height: 16px;
+                background: $yellow-second-color;
+                box-shadow: 0 0 10px $yellow-second-color;
+            }
+        }
+    }
+}
+
+
+
+@keyframes animateCircle {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(45deg);
+    }
+
+    100% {
+        transform: rotate(405deg);
+    }
+}
